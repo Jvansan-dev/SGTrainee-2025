@@ -15,7 +15,8 @@ nQuantidadeC := 0
 @05,01 say " Coca-cola " 
 @06,01 say " Farinha "
 @07,01 say " Arroz "
-@09,01 say "SUBTOTAL"
+@05,37 say nProdutoA*nQuantidadeA picture "@E 9,999.99"
+@09,27 say "SUBTOTAL:"
 @09,37 say (nProdutoA*nQuantidadeA)+(nProdutoB*nQuantidadeB)+(nProdutoC*nQuantidadeC) picture "@E 9,999.99"
 
 @05,14 get nProdutoA picture "@E 9999.99"
@@ -30,7 +31,9 @@ read
 @05,01 say " Coca-cola " 
 @06,01 say " Farinha "
 @07,01 say " Arroz "
-@09,01 say "SUBTOTAL"
+@05,37 say nProdutoA*nQuantidadeA picture "@E 9,999.99"
+@06,37 say nProdutoB*nQuantidadeB picture "@E 9,999.99"
+@09,27 say "SUBTOTAL"
 @09,37 say (nProdutoA*nQuantidadeA)+(nProdutoB*nQuantidadeB)+(nProdutoC*nQuantidadeC) picture "@E 9,999.99"
 
 @06,14 get nProdutoB picture "@E 9999.99"
@@ -45,7 +48,10 @@ read
 @05,01 say " Coca-cola " 
 @06,01 say " Farinha "
 @07,01 say " Arroz "
-@09,01 say "SUBTOTAL"
+@05,37 say nProdutoA*nQuantidadeA picture "@E 9,999.99"
+@06,37 say nProdutoB*nQuantidadeB picture "@E 9,999.99"
+@07,37 say nProdutoC*nQuantidadeC picture "@E 9,999.99"
+@09,27 say "SUBTOTAL"
 @09,37 say (nProdutoA*nQuantidadeA)+(nProdutoB*nQuantidadeB)+(nProdutoC*nQuantidadeC) picture "@E 9,999.99"
 
 @07,14 get nProdutoC picture "@E 9999.99"
@@ -56,11 +62,11 @@ read
 @06,37 say nProdutoB*nQuantidadeB picture "@E 9,999.99"
 @07,37 say nProdutoC*nQuantidadeC picture "@E 9,999.99"
 @08,01 say Replicate ("-",49)
-@09,01 say "SUBTOTAL"
+@09,27 say "SUBTOTAL"
 @09,37 say (nProdutoA*nQuantidadeA)+(nProdutoB*nQuantidadeB)+(nProdutoC*nQuantidadeC) picture "@E 9,999.99"
-@10,01 say "TOTAL DA COMPRA"
+@10,20 say "TOTAL DA COMPRA:"
 @10,37 say (nProdutoA*nQuantidadeA)+(nProdutoB*nQuantidadeB)+(nProdutoC*nQuantidadeC) picture "@E 9,999.99"
-@20,01 say "  Compra Finalizada...  "
+@15,01 say "  Compra Finalizada...  "
 
 
 
