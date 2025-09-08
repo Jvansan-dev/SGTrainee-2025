@@ -1,0 +1,6 @@
+@ 2,8 say "TRAINEE SGSISTEMAS"
+@ 4,1 say "--------------------"
+@ 5,1 say "Nome: Joao Victor"
+@ 6,1 say "Idade: 20"
+@ 7,1 say "Peso: 100kg"
+@ 8,1 say "--------------------"
