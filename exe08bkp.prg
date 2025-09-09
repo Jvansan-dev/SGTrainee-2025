@@ -11,7 +11,7 @@ cNomeA := Space (10)
 cNomeB := Space (10)
 cNomeC := Space (10)
 cNomeCliente := Space (20)
-nSegundos := 0
+dData := DATE()
 
 @01,01 say "Exercicio 08 - Calculo do valor total da compra"
 @23,02 say "Tecle <ESC> para sair..."
@@ -54,9 +54,10 @@ read
 @13,39 say (nProdutoA*nQuantidadeA)+(nProdutoB*nQuantidadeB)+(nProdutoC*nQuantidadeC) picture "@E 9,999.99" 
 @14,20 say "TOTAL DA COMPRA:"
 @14,39 say (nProdutoA*nQuantidadeA)+(nProdutoB*nQuantidadeB)+(nProdutoC*nQuantidadeC) picture "@E 9,999.99" 
-@18,02 say "  Compra Finalizada...  "
+@23,02 say "  Tecle <ENTER> para emitir o cupom fiscal..."
+nTecla := Inkey(0) // Aguarda até o usuário pressionar uma tecla
 
-@02,01 clear to 18,50
+@02,01 clear to 24,50
 
 @04,18 say "CUPOM FISCAL"
 @05,02 say "Descricao"
@@ -78,10 +79,10 @@ read
 @16,02 say "ENDERECO XXXX"
 @17,02 say "CUPOM XXXXX"
 @18,02 say "CLIENTE:"
-@18,11 say cNomeCliente
+@18,11 say cNomeCliente 
 @03,01 to 21,45 double
 @20,02 say "---------------VOLTE SEMPRE----------------"
-@23,02 say "  DATA: 08/09/2025           "
+@23,02 say "  DATA: " + Dtoc(dData)
 
 
 
