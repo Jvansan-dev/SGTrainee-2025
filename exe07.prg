@@ -11,7 +11,7 @@ nNumeroB := 0
 @15,01 say "Tecle <ESC> para sair..."
 
 @04,28 get nNumeroA picture "@E 999.99" valid nNumeroA >= 0 
-@05,28 get nNumeroB picture "@E 999.99" valid nNumeroA >= 0
+@05,28 get nNumeroB picture "@E 999.99" valid nNumeroB >= 0
 read
 
 @07,02 say "A soma e:"

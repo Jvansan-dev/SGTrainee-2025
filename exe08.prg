@@ -6,6 +6,9 @@ nProdutoC := 0
 nQuantidadeA := 0
 nQuantidadeB := 0
 nQuantidadeC := 0
+cNomeA := Space (10)
+cNomeB := Space (10)
+cNomeC := Space (10)
 
 @01,01 say "Exercicio 08 - Calculo do valor total da compra"
 @20,01 say "Tecle <ESC> para sair..."
