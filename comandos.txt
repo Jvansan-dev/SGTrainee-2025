@@ -1,0 +1,51 @@
+*COMANDOS*
+
+exe01.png
+
+clean //limpa
+*primeiro* numero da linha - 24
+*segundo* numero da coluna - 79
+*say* mostra na tela
+
+
+@02,01 say "Exercicio 06 - Media de tres numeros"
+@00,00 say Replicate ("_",79)
+@11,01 say Replicate ("_",79)
+
+--------------------------
+comando pra compilar *hbmk2*
+pra criar arquivo com editor "q"
+Replicate("*",50)
+*say* mostra na tela
+*get* pra digitar
+"read" em baixo do bloco de 'get'
+:= comando de atribuição
+picture(mascara) sempre em "@E" exemplo picture "999" ou "999.9" ou "@E 999.9" pra aparecer virgula pro usuario
+valid serve para validar algo, exemplo: valid nNumeroA >= 0, tudo que for menor ou igual a 0 nao passa
+*to* cria uma caixa com _  @00,00 to 80,80 // to clear pra limpar parte da tela
+valid !Empty(cNomeC) pra nao passar em branco
+Inkey (nSegundos) 0 para quando quer pausar, ou adicionar o tempo em segundos
+
+if > comeco
+elseif > mais condicoes
+else > qualquer outra coisa
+endif > fim
+
+w - branco
+n - preto
+b - azul
+g - verde
+r - vermelho
+
+set color to w/n
+primeiro letra
+depois fundo
+
+AllTrim(Str(n))
+
+
+
+
+
+
+
