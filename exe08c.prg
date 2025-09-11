@@ -2,7 +2,7 @@ set epoch to 1940 //utilizar ano acima de 2000
 set date british //data modo britanico
 set scoreboard off //corrige borda
 clear //limpa tela
-
+setmode (25,80)
 
 nCupom       := 0
 nProdutoA    := 0
@@ -29,14 +29,14 @@ dEntrega     := CToD("")
 @02,15 say "DADOS CADASTRAIS"
 @23,02 say "Tecle <ESC> para sair..."
 @04,02 say "Nome:"
-@05,02 say "Data:"
-@06,02 say "Endereco:"
+@05,02 say "Endereco:"
+@06,02 say "Data:"
 @07,02 say "Data entrega:"
 @08,02 say "CPF:"
 
 @04,09 get cNomeCliente picture "@!"             valid !Empty(cNomeCliente)
-@05,09 get dCompra  
-@06,12 get cEndereco    picture "@!"             valid !Empty(cEndereco)
+@05,12 get cEndereco    picture "@!"             valid !Empty(cEndereco)
+@06,09 get dCompra  
 @07,16 get dEntrega                              valid dEntrega >= dCompra +3
 @08,07 get cCpf         picture "999.999.999-99" valid !Empty(cCpf)
 read//PRIMEIRO READ
@@ -111,7 +111,3 @@ Inkey(0) // Aguarda até o usuário pressionar uma tecla
 @22,02 say "---------------VOLTE SEMPRE----------------"
 @03,01 to 23,45 double
 Inkey(0) // Aguarda até o usuário pressionar uma tecla
-
-
-
-

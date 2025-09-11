@@ -7,4 +7,7 @@ setmode (25,80)//ajusta tela
 dAtual := DATE()
 
 @00,51 say dAtual 
-@00,01 say "Exercicio ** - ****************** - " 
+@00,03 say "Exercicio ** - ****************** - " 
+@01,03 say "Joao Victor Vansan"
+@01,24 say "jv.vansan@gmail.com"
+@01,46 say "(44)99964-0402"
