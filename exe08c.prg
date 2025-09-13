@@ -62,12 +62,12 @@ read//PRIMEIRO READ
 @08,02 get cNomeA       picture "@!"          Valid !Empty(cNomeA)
 @08,14 get nProdutoA    picture "@E 9999.99"  
 @08,27 get nQuantidadeA picture "999.99"      Valid nQuantidadeA >= 0 
-@09,02 get cNomeB       picture "@!"     Valid !Empty(cNomeB)
+@09,02 get cNomeB       picture "@!"          Valid !Empty(cNomeB)
 @09,14 get nProdutoB    picture "@E 9999.99"
-@09,27 get nQuantidadeB picture "999.99" Valid nQuantidadeB >= 0
-@10,02 get cNomeC       picture "@!"     Valid !Empty(cNomeC)
+@09,27 get nQuantidadeB picture "999.99"      Valid nQuantidadeB >= 0
+@10,02 get cNomeC       picture "@!"          Valid !Empty(cNomeC)
 @10,14 get nProdutoC    picture "@E 9999.99" 
-@10,27 get nQuantidadeC picture "999.99" Valid nQuantidadeC >= 0
+@10,27 get nQuantidadeC picture "999.99"      Valid nQuantidadeC >= 0
 read
 
 @08,39 say (nProdutoA*nQuantidadeA)                                                   picture "@E 9,999.99" 

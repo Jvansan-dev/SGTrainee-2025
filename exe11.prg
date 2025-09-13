@@ -20,7 +20,7 @@ cNome := Space(15)
 @04,00 to 10,35 double
 
 @05,19 get cNome  picture "@!"   valid !Empty(cNome)   
-@06,19 get nIdade picture "999"  valid nIdade >= 0
+@06,19 get nIdade picture "999"  valid nIdade >= 0 .and. nIdade <= 100
 read
 
 if nIdade >= 5 .and. nIdade <= 7

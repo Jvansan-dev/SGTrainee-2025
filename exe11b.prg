@@ -8,9 +8,9 @@ dAtual := DATE()
 nIdade := 0
 cNome := Space(15)
 cCategoria := ""
-cColor := ""
+cCor := ""
 
-@00,38 say dAtual 
+@00,40 say dAtual 
 @00,03 say "Exercicio 11 - Variacoes na idade - " 
 @01,03 say "Joao Victor Vansan"
 @01,24 say "jv.vansan@gmail.com"
@@ -25,25 +25,28 @@ cColor := ""
 @06,19 get nIdade picture "999"  valid nIdade >= 0
 read
 
-if nIdade >= 5 .and. nIdade <= 7
+if nIdade >= 5 .and. nIdade <= 7 //entre 5 e 7
     cCategoria := "Sua categoria e: INFANTIL A"
-    cColor := color "g/n"
-elseif nIdade >= 8 .and.  nIdade <= 10
+    cCor := "g/n"
+elseif nIdade >= 8 .and.  nIdade <= 10 //entre 8 e 10
     cCategoria := "Sua categoria e: INFANTIL B"
-    cColor := color "g/n"
-elseif nIdade >= 11 .and. nIdade <= 13
+    cCor := "g/n"
+elseif nIdade >= 11 .and. nIdade <= 13 //entre 11 e 13
     cCategoria := "Sua categoria e: JUVENIL A"
-    cColor := color "g/n"
-elseif nIdade >= 14 .and. nIdade <= 17
+    cCor := "g/n"
+elseif nIdade >= 14 .and. nIdade <= 17 //entre 5 e 7
     cCategoria := "Sua categoria e: JUVENIL B"
-    cColor := color "g/n"
-elseif nIdade >= 18
+    cCor := "g/n"
+elseif nIdade >= 18 //entre 5 e 7
     cCategoria := "Sua categoria e: SENIOR"
-    cColor := color "g/n"
+    cCor := "g/n"
+elseif nIdade >= 1 .and.  nIdade <= 4 //entre 5 e 7
+    cCategoria := "SEM CATEGORIA" 
+    cCor := "r/n"
 endif
 
-@09,01 say cCategoria  
-Inkey(0) // Aguarda até o usuário pressionar uma tecla
+@09,01 say cCategoria color cCor
+Inkey(0) // Aguarda ate o usuário pressionar uma tecla
 
 
     
