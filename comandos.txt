@@ -42,7 +42,9 @@ primeiro letra
 depois fundo
 
 AllTrim(Str(n))
-
+@01,01 say "o aluno" + AllTrim(cNome) + "Foi aprovado"
+@01,01 say "a media é " + str(nMedia)
+Alltrim (Str(nValor))
 
 
 
