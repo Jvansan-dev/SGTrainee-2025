@@ -7,9 +7,11 @@ setmode (25,80)//ajusta tela
 
 cNome := Space(15)
 cCurso := Space(15)
+cCor := ""
 nSerie := 0
 nMensalidade := 0
 nMedia := 0
+nDpa := 0
 dDataNasc := CToD("")
 cResultadoA := ""
 cResultadoB := ""
@@ -49,11 +51,12 @@ nFaltaC4 := 0
 @03,01 say "Data de nascimento:"
 @04,01 say "Curso.............:"
 @05,01 say "Serie.............:"
+@05,23 say "(1 a 8)             "
 @06,01 say "Mensalidade.......:"
 
 @02,21 get cNome        picture "@!"   valid !Empty(cNome)  
 @03,21 get dDataNasc
-@04,21 get cCurso
+@04,21 get cCurso       picture "@!"   valid !Empty(cCurso)
 @05,21 get nSerie       picture "9" valid nSerie >= 1 .and. nSerie <= 8
 @06,21 get nMensalidade picture "999.99"
 read
@@ -64,13 +67,20 @@ elseif nSerie > 4 .and. nSerie < 9
     nMedia := 70
 endif
 
+if nSerie <= 3
+    nDpa := 6
+elseif nSerie > 3 .and. nSerie <= 8
+    nDpa := 8
+endif
+
+@08,53 say nDpa
 @08,47 say nMedia
 
 @08,01 say "| DISCIPLINA |  1B   |  2B   |  3B   |  4B   | MEDIA"
 @09,01 say "|            | N - F | N - F | N - F | N - F | N - F |"
-@10,01 say "|            |   -   |   -   |   -   |   -   |   -    "
-@11,01 say "|            |   -   |   -   |   -   |   -   |   -    "
-@12,01 say "|            |   -   |   -   |   -   |   -   |   -    "
+@10,01 say "|            |   -   |   -   |   -   |   -   |   -   |"
+@11,01 say "|            |   -   |   -   |   -   |   -   |   -   |"
+@12,01 say "|            |   -   |   -   |   -   |   -   |   -   |"
 
 @10,02 get cDiciplinaA //1B
 @10,15 get nNotaA1         picture "999" valid nNotaA1 >= 0 .and.  nNotaA1 <= 100
@@ -83,8 +93,18 @@ endif
 @10,43 get nFaltaA4        picture "999" valid nFaltaA4 >= 0 .and. nFaltaA4 <= 364
 read
 
-@10,47 say (nNotaA1+nNotaA2+nNotaA3+nNotaA4) /4             picture "999" 
-@10,51 say (nFaltaA1+nFaltaA2+nFaltaA3+nFaltaA4) /4         picture "999" 
+nResultadoA := (nNotaA1+nNotaA2+nNotaA3+nNotaA4) /4
+nDpA := (nFaltaA1+nFaltaA2+nFaltaA3+nFaltaA4)
+
+if nResultadoA >= nMedia
+    cCor := "g/n"
+else
+    cCor := "r/n"
+endif
+
+@10,47 say nResultadoA color cCor            picture "999"  
+@10,51 say nDpA                              picture "999" 
+
 
 @11,02 get cDiciplinaB //2B
 @11,15 get nNotaB1         picture "999" valid nNotaA1 >= 0 .and.  nNotaA1 <= 100
@@ -97,8 +117,17 @@ read
 @11,43 get nFaltaB4        picture "999" valid nFaltaA4 >= 0 .and. nFaltaA4 <= 364
 read
 
-@11,47 say (nNotaB1+nNotaB2+nNotaB3+nNotaB4) /4             picture "999" 
-@11,51 say (nFaltaB1+nFaltaB2+nFaltaB3+nFaltaB4) /4         picture "999" 
+nResultadoB := (nNotaB1+nNotaB2+nNotaB3+nNotaB4) /4
+nDpB := (nFaltaB1+nFaltaB2+nFaltaB3+nFaltaB4)
+
+if nResultadoB >= nMedia
+    cCor := "g/n"
+else
+    cCor := "r/n"
+endif
+
+@11,47 say nResultadoB color cCor            picture "999"  
+@11,51 say nDpB                              picture "999" 
 
 @12,02 get cDiciplinaC//3B
 @12,15 get nNotaC1         picture "999" valid nNotaA1 >= 0 .and.  nNotaA1 <= 100
@@ -111,8 +140,18 @@ read
 @12,43 get nFaltaC4        picture "999" valid nFaltaA4 >= 0 .and. nFaltaA4 <= 364
 read
 
-@12,47 say (nNotaC1+nNotaC2+nNotaC3+nNotaC4) /4             picture "999" 
-@12,51 say (nFaltaC1+nFaltaC2+nFaltaC3+nFaltaC4) /4         picture "999" 
+nResultadoC := (nNotaC1+nNotaC2+nNotaC3+nNotaC4) /4
+nDpC := (nFaltaC1+nFaltaC2+nFaltaC3+nFaltaC4)
+
+if nResultadoC >= nMedia
+    cCor := "g/n"
+else
+    cCor := "r/n"
+endif
+
+@12,47 say nResultadoC color cCor            picture "999"  
+@12,51 say nDpC                              picture "999" 
+
 
 nResultadoA := (nNotaA1+nNotaA2+nNotaA3+nNotaA4) /4
 nResultadoB := (nNotaB1+nNotaB2+nNotaB3+nNotaB4) /4
@@ -121,9 +160,9 @@ nDpA := (nFaltaA1+nFaltaA2+nFaltaA3+nFaltaA4)
 nDpB := (nFaltaB1+nFaltaB2+nFaltaB3+nFaltaB4)
 nDpC := (nFaltaC1+nFaltaC2+nFaltaC3+nFaltaC4)
 
-if nResultadoA >= 60 .and. nDpA < 6
+if nResultadoA >= 60 .or. nDpA > 100
     cResultadoA := "Aluno aprovado na materia.:"
-elseif nResultadoA <= 59 .and. nDpA > 6 
+elseif nResultadoA <= 59 .or. nDpA < 100
     cResultadoA := "Aluno reprovado na materia:"
 endif
 
