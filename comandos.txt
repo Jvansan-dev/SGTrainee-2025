@@ -3,6 +3,7 @@
 exe01.png
 
 clean //limpa
+
 *primeiro* numero da linha - 24
 *segundo* numero da coluna - 79
 *say* mostra na tela
@@ -25,12 +26,12 @@ valid serve para validar algo, exemplo: valid nNumeroA >= 0, tudo que for menor 
 *to* cria uma caixa com _  @00,00 to 80,80 // to clear pra limpar parte da tela
 valid !Empty(cNomeC) pra nao passar em branco
 Inkey (nSegundos) 0 para quando quer pausar, ou adicionar o tempo em segundos
-
+---------------------
 if > comeco
 elseif > mais condicoes
 else > qualquer outra coisa
 endif > fim
-
+-------------------------
 w - branco
 n - preto
 b - azul
@@ -45,8 +46,19 @@ AllTrim(Str(n))
 @01,01 say "o aluno" + AllTrim(cNome) + "Foi aprovado"
 @01,01 say "a media é " + str(nMedia)
 Alltrim (Str(nValor))
+------------------------
+Estrutura de repeticao
 
+do while <condicao> //abertura //faca enquanto
 
+enddo //fechamento
+
+nInteracoes := 1
+
+do while nInteracoes <= 10
+    //imprime cNome
+    nInteracoes++
+enddo
 
 
 
