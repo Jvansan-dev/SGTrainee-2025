@@ -21,6 +21,11 @@ cResultadoC := ""
 cDiciplinaA := Space(12)
 cDiciplinaB := Space(12)
 cDiciplinaC := Space(12)
+cFinalA := ""
+cFinalB := ""
+cFinalC := ""
+
+
 
 nNotaA1 := 0
 nNotaA2 := 0
@@ -176,4 +181,25 @@ endif
 @17,02 say cResultadoC+cDiciplinaC
 
 inkey(0)
+
+if cResultadoA == "Aluno reprovado na materia:"
+    cFinalA := "Aluno em dp na materia:" + AllTrim(cDiciplinaA)
+endif
+
+if cResultadoB == "Aluno reprovado na materia:"
+    cFinalB := "Aluno em dp na materia:" + AllTrim(cDiciplinaB)
+endif
+
+if cResultadoC == "Aluno reprovado na materia:"
+    cFinalC := "Aluno em dp na materia:" + AllTrim(cDiciplinaC)    
+endif
+
+@20,02 say cFinalA
+@21,02 say cFinalB
+@22,02 say cFinalC
+
+inkey(0)
+
+
+
 
