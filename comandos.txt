@@ -59,7 +59,85 @@ do while nInteracoes <= 10
     //imprime cNome
     nInteracoes++
 enddo
+------------------------
+
+LEN() retorna o comprimento (número de caracteres) de uma string.
+LEN(<cString>)
+LEN("Hello")          // Retorna: 5
+LEN("Harbour")        // Retorna: 7  
+LEN("")               // Retorna: 0
+LEN("123 456")        // Retorna: 7 (espaço conta como caractere)
+LEN("Ção")           // Retorna: 3 (caracteres acentuados contam normalmente)
 
 
+SUBSTR() extrai uma substring (parte de uma string) a partir de uma posição específica.
+*exemplo*
 
+cTexto := "Harbour Power"
+SUBSTR(cTexto, 1, 7)      // Retorna: "Harbour"
+SUBSTR(cTexto, 9)         // Retorna: "Power" (até o final)
+SUBSTR(cTexto, 9, 3)      // Retorna: "Pow"
+SUBSTR("ABCDE", 3, 2)     // Retorna: "CD"
+SUBSTR("Teste", 6)        // Retorna: "" (string vazia)
 
+-------------------------------
+OPERADORES ARITMÉTICOS
++   // Adição
+-   // Subtração  
+*   // Multiplicação
+/   // Divisão
+%   // Módulo (resto da divisão)
+^   // Exponenciação
+**  // Exponenciação (alternativo)
+Exemplos:
+5 + 3    // 8
+10 - 4   // 6
+2 * 6    // 12
+15 / 3   // 5
+10 % 3   // 1 (resto da divisão)
+2 ^ 3    // 8 (2 elevado a 3)
+3 ** 2   // 9 (3 elevado a 2)
+---------------------------------
+OPERADORES RELACIONAIS (COMPARAÇÃO)
+=   // Igual
+==  // Exatamente igual (case-sensitive)
+!=  // Diferente
+<>  // Diferente (alternativo)
+#   // Diferente (alternativo)
+>   // Maior que
+<   // Menor que
+>=  // Maior ou igual
+<=  // Menor ou igual
+Exemplo:
+5 = 5        // .T. (true)
+"A" == "a"   // .F. (false - case sensitive)
+10 != 5      // .T. (true)
+7 > 3        // .T. (true)
+"B" < "A"    // .F. (false)
+---------------------------------
+OPERADORES DE STRING
++       // Concatenação
+-       // Concatenação com remoção de espaços
+$       // Contido em (substring)
+==      // Comparação exata
+Exemplo:
+"Hello" + " World"     // "Hello World"
+"Hello " - " World"    // "HelloWorld" (remove espaços)
+"abc" $ "abcdef"       // .T. (abc está contido em abcdef)
+"ABC" == "abc"         // .F. (case sensitive)
+---------------------------------
+OPERADORES DE ATRIBUIÇÃO
+:=      // Atribuição simples
++=      // Atribuição com adição
+-=      // Atribuição com subtração
+*=      // Atribuição com multiplicação
+/=      // Atribuição com divisão
+%=      // Atribuição com módulo
+Exemplo:
+nValor := 10          // Atribuição simples
+nValor += 5           // nValor = 15
+nValor -= 3           // nValor = 12
+nValor *= 2           // nValor = 24
+nValor /= 4           // nValor = 6
+nValor %= 5           // nValor = 1
+---------------------------------
