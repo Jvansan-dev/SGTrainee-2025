@@ -153,7 +153,7 @@ endif
 nAcrescimoPuraPlano := 0
 if  cTipoPlano == "A"
     nAcrescimoPuraPlano := 0.25
-elseif TipoPlano == "V"
+elseif cTipoPlano == "V"
     nAcrescimoPuraPlano := 0.45
 endif
 
@@ -171,9 +171,9 @@ endif
 
 //---------------------------------------
 
-nValorBaseS1 := (nDescontoI+nAcrescimoI+nDescontoS+nAcrescimoS+nAcrescimoImc+nAcrescimoFuma+nAcrescimoPlano+nAcrescimoAbrangencia+nDescontoMes)
-nTotal := (nValorBase1+nValorBaseS1)
-cCor := "w/g"
+nPercentual := nDescontoI + nAcrescimoI + nDescontoS + nAcrescimoS + nAcrescimoImc + nAcrescimoFuma + nAcrescimoPlano + nAcrescimoAbrangencia + nDescontoMes
+nTotal := nValorBase1 + (nValorBase1 * nPercentual)
+
 nLinha := 16
 @nLinha++,01 say "SAUDE TOTAL"    
 @nLinha++,01 say Replicate("-",38) 
@@ -183,12 +183,11 @@ nLinha := 16
 @nLinha++,15 say nTotal * 3     picture "@E 9999.99"
 @nLinha,01 say "Anual.......:" 
 @nLinha++,15 say nTotal * 12    picture "@E 9999.99"
-@15,00 to 21,39 color cCor
+@15,00 to 21,39 
 
-nValorBaseS2 := (nDescontoPuraI+nAcrescimoPuraI+nDescontoPuraS+nAcrescimoPuraS+nAcrescimoPuraImc+nAcrescimoPuraFuma+nAcrescimoPuraPlano+nAcrescimoPuraAbrangencia+nDescontoPuraMes)
-nTotal2 := (nValorBase2+nValorBaseS2)
+nPercentual2 := nDescontoPuraI + nAcrescimoPuraI + nDescontoPuraS + nAcrescimoPuraS + nAcrescimoPuraImc + nAcrescimoPuraFuma + nAcrescimoPuraPlano + nAcrescimoPuraAbrangencia + nDescontoPuraMes
+nTotal2 := nValorBase2 + (nValorBase2 * nPercentual2)
 
-cCor := "w/r"
 nLinha := 16
 @nLinha++,41 say "VIDA PURA"       
 @nLinha++,41 say Replicate("-",38) 
@@ -198,9 +197,9 @@ nLinha := 16
 @nLinha++,57 say nTotal2 * 3    picture "@E 9999.99"
 @nLinha,41 say "Anual.......:"
 @nLinha++,57 say nTotal2  * 12  picture "@E 9999.99"
-@15,40 to 21,79 color cCor
+@15,40 to 21,79 
 
-
+@23,00 say ""
 
 inkey(0)
 
