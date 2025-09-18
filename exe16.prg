@@ -22,17 +22,17 @@ clear
 
 do while nInteracoes <= nRepeticao
 
-if nLinha >= 24
+  if nLinha >= 24
     nLinha := 0
     nColuna += 20
-endif
+  endif
 
-if nColuna >= 70
+  if nColuna >= 70
     inkey(0)
     Clear
     nLinha := 0
     nColuna := 1
-endif
+  endif
 
   @nLinha++,nColuna say AllTrim(Str(nInteracoes++)) + "- " + cNome
 enddo
