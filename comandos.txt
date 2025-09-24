@@ -141,3 +141,8 @@ nValor *= 2           // nValor = 24
 nValor /= 4           // nValor = 6
 nValor %= 5           // nValor = 1
 ---------------------------------
+
+Tranform (nNum, cMascara)
+Alert (cMen) {'sim','nao','talvez'} cCor
+         opcao  1     2      3     
+cTexto := DToC(dData)         
