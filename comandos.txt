@@ -145,4 +145,24 @@ nValor %= 5           // nValor = 1
 Tranform (nNum, cMascara)
 Alert (cMen) {'sim','nao','talvez'} cCor
          opcao  1     2      3     
-cTexto := DToC(dData)         
+cTexto := DToC(dData)  
+
+-----------------------------------
+set message to 24 center //com center fica centralizado
+set wrap on //faz com a nagacao das opcoes fique melhor
+clear
+
+nOpcao := 1
+
+@01,01 prompt "Cadastrar" message "Cadastrar produto"
+@02,01 prompt "Consultar" message "Consultar produto"
+@03,01 prompt "Finalizar" message "Finalizar produto"
+
+menu to nOpcao
+    if nOpcao == 1
+    ...
+    endif
+//prompt cria um menu para selecionar
+//message aparece a mesagem no rodape como se fosse uma 'legenda'
+-------------------------------------
+
